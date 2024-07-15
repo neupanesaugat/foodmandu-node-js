@@ -92,6 +92,7 @@ export const deleteFoodById = async (req, res) => {
   return res.status(200).send({ message: "Food Item deleted successfully!" });
 };
 
+//? Edit food items by id
 export const editFoodById = async (req, res) => {
   // extract id from req.params
   const foodId = req.params.id;
