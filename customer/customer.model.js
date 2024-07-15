@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 //? set rule/schema/structure
 
 const customerSchema = new mongoose.Schema({
+  //? new helps to create object (following mongoose documentation)
   email: String,
   phoneNumber: String,
   address: String,
