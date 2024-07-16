@@ -9,7 +9,6 @@ import {
   validateFoodId,
   validateMongoId,
 } from "./food.service.js";
-import Food from "./food.model.js";
 
 const router = express.Router();
 
