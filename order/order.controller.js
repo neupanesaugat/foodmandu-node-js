@@ -36,8 +36,8 @@ router.get("/detail", async (req, res) => {
     },
     {
       $project: {
-        customerEmail: { $first: "$customerDetails.email" },
-        foodName: { $first: "$foodDetails.name" },
+        customerEmail: "$customerDetails.email",
+        foodName: "$foodDetails.name",
         quantity: 1,
       },
     },
