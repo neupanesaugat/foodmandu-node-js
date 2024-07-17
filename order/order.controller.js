@@ -20,7 +20,7 @@ router.get("/detail", async (req, res) => {
     },
     {
       $lookup: {
-        from: "Customer",
+        from: "customers",
         localField: "customerId",
         foreignField: "_id",
         as: "customerDetails",
@@ -28,7 +28,7 @@ router.get("/detail", async (req, res) => {
     },
     {
       $lookup: {
-        from: "Food",
+        from: "foods",
         localField: "foodId",
         foreignField: "_id",
         as: "foodDetails",
@@ -36,8 +36,8 @@ router.get("/detail", async (req, res) => {
     },
     {
       $project: {
-        customerEmail: "$customerDetails.email",
-        foodName: "$foodDetails.name",
+        customerEmail: { $first: "$customerDetails.email" },
+        foodName: { $first: "$foodDetails.name" },
         quantity: 1,
       },
     },
